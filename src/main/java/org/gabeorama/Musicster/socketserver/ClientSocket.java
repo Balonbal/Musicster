@@ -31,7 +31,18 @@ public class ClientSocket implements Runnable {
 
     @Override
     public void run() {
-
-
+        String response = "";
+        //TODO Handle requests here
+        //TODO Build a commandhandler to handle requests from clients
+        //TODO Respond
+        //TODO Terminate connection
+        try {
+            //TODO Handle response
+            output.write(response.length());
+            output.write(response);
+        } catch (IOException e) {
+            //TODO Handle exception
+        }
+        socketServer.removeClient(this);
     }
 }
