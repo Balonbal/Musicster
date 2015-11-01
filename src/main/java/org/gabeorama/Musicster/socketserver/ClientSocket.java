@@ -6,7 +6,7 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * Created by Håvard on 10/14/2015.
+ * Created by HÃ¥vard on 10/14/2015.
  */
 public class ClientSocket implements Runnable {
     //Objects
@@ -44,5 +44,13 @@ public class ClientSocket implements Runnable {
             //TODO Handle exception
         }
         socketServer.removeClient(this);
+    }
+
+    private void sendResponse(String response) throws IOException{
+        if(output != null) {
+            output.write(response.length());
+            output.write(response);
+            output.flush();
+        }
     }
 }
